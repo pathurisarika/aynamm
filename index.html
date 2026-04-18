@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Birthday Surprise 💖</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  overflow: hidden;
+}
+
+.page {
+  display: none;
+  height: 100vh;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  color: white;
+}
+
+.active { display: flex; }
+
+/* PAGE 1 */
+#page1 {
+  background: linear-gradient(135deg, #ff758c, #ff7eb3);
+}
+
+#page1 img {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid white;
+  margin-bottom: 20px;
+}
+
+/* PAGE 2 */
+#page2 {
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+  padding: 20px;
+}
+
+/* LAYOUT WRAPPER */
+.layout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+/* SIDE IMAGES COLUMN */
+.side-column {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.side-column img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 15px;
+  border: 3px solid white;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  transition: 0.3s;
+}
+
+.side-column img:hover {
+  transform: scale(1.1);
+}
+
+/* CENTER FRAME */
+.frame {
+  background: rgba(255,255,255,0.2);
+  backdrop-filter: blur(12px);
+  border-radius: 25px;
+  padding: 30px;
+  max-width: 500px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+/* PAGE 3 */
+#page3 {
+  background: #ff6b81;
+}
+
+video {
+  width: 80%;
+  max-width: 500px;
+  border-radius: 20px;
+  border: 5px solid white;
+}
+
+button {
+  padding: 12px 25px;
+  margin-top: 20px;
+  border: none;
+  border-radius: 25px;
+  background: white;
+  color: #ff4d6d;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover { transform: scale(1.1); }
+</style>
+</head>
+
+<body>
+
+<!-- PAGE 1 -->
+<div id="page1" class="page active">
+  <img src="C:\Users\sarik\OneDrive\Desktop\aynamm\images\main.jpeg">
+  <h2>Something special for you 💕</h2>
+  <h2>Made this with lots of love… just for you 💕</h2>
+  <button onclick="showPage(2)">Tap to Open 💌</button>
+</div>
+
+<!-- PAGE 2 -->
+<div id="page2" class="page">
+
+  <div class="layout">
+
+    <!-- LEFT IMAGES -->
+    <div class="side-column">
+      <img src="C:\Users\sarik\OneDrive\Desktop\aynamm\images\photo1.jpeg">
+      <img src="C:\Users\sarik\OneDrive\Desktop\aynamm\images\photo2.jpeg">
+      <img src="C:\Users\sarik\OneDrive\Desktop\aynamm\images\photo3.jpeg">
+    </div>
+
+    <!-- CENTER MESSAGE -->
+    <div class="frame">
+      <h1>Our Journey 💞</h1>
+
+      <p>
+Wishing you the happiest birthday, my dear 💖✨<br>
+Honestly, I don’t even know where to start… there’s so much I feel when it comes to you 🥹  
+All I wish for you is endless happiness, growth, and success in every step of your life 🌸<br>
+And now, you’ve stepped into a beautiful new phase of life 💍  
+Congratulations once again… I was literally in tears at your wedding, but they were the happiest tears ❤️  
+Seeing you like that made my heart so full 💞<br>
+From LKG till now… we’ve come such a long way together 🥹  
+You’re not just a friend to me, you’re something much more special… something I can’t even explain in words 💖  
+Sometimes I’m honestly amazed at how mature and strong you are…  
+I’ve learned so many things from you, especially the way you think and handle life ✨<br>
+No matter what you do, what you did, or what you will do…  
+I’ll always be there for you, supporting you, cheering for you, anytime ❤️<br>
+Even if life takes us in different directions…  
+that excitement I feel when I see you has never changed 💫  
+Talking to you always feels like home… warm, comfortable, and real 🥹💞<br>
+And if I ever hurt you unknowingly… I’m truly sorry 🤍  
+I would never want to hurt you, ever.<br>
+I don’t even know how much I love and admire you…  
+maybe even I can’t measure it 💖✨<br>
+You’ll always have me… no matter what, no matter when 💕
+Lots and lots of love always ❤️✨
+      <button onclick="showPage(3)">One More Surprise 💌</button></p>
+    </div>
+
+    <!-- RIGHT IMAGES -->
+    <div class="side-column">
+      <img src="C:\Users\sarik\OneDrive\Desktop\aynamm\images\photo4.jpeg">
+      <img src="C:\Users\sarik\OneDrive\Desktop\aynamm\images\photo5.jpeg">
+      <img src="C:\Users\sarik\OneDrive\Desktop\aynamm\images\photo6.jpeg">
+    </div>
+
+  </div>
+
+</div>
+
+<!-- PAGE 3 -->
+<div id="page3" class="page">
+  <h2>This is for you 💖🎥</h2>
+
+  <video controls autoplay>
+    <source src="videos/video.mp4" type="video/mp4">
+  </video>
+
+  <p style="margin-top:20px;">
+    You’ll always be my forever friend 🥹💞<br>
+    Love you always ❤️✨
+  </p>
+</div>
+
+<script>
+function showPage(pageNumber) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById('page' + pageNumber).classList.add('active');
+}
+</script>
+
+</body>
+</html>
